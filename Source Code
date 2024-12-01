@@ -10,7 +10,7 @@ public class Mikasa {
 	            System.out.println("Hello Sir! What's your plan for today?");
 	        } 
 	        else if (command.contains("who") || command.contains("introduce")) {
-	            System.out.println("Hello Sir! My Name is Mikasa and I am Your Personal Assitant How May I Help You Sir? ");
+	            System.out.println("Hello Sir! My Name is Eren and I am Your Personal Assitant How May I Help You Sir? ");
 	        }
 	        else if (command.contains("time")) {
 	            Calendar now = Calendar.getInstance();
