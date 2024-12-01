@@ -1,0 +1,91 @@
+import java.util.Scanner;
+import java.util.Calendar;
+
+public class Mikasa {
+
+	private static void respond(String command) {
+		
+      	Scanner sc = new Scanner(System.in);
+		 if (command.contains("hello") || command.contains("hola")) {
+	            System.out.println("Hello Sir! What's your plan for today?");
+	        } 
+	        else if (command.contains("who") || command.contains("introduce")) {
+	            System.out.println("Hello Sir! My Name is Mikasa and I am Your Personal Assitant How May I Help You Sir? ");
+	        }
+	        else if (command.contains("time")) {
+	            Calendar now = Calendar.getInstance();
+	            int hour = now.get(Calendar.HOUR_OF_DAY);
+	            int minute = now.get(Calendar.MINUTE);
+	            int second = now.get(Calendar.SECOND);
+	            System.out.println("The current time is " + hour + ":" + minute + ":" + second);
+	        } 
+	        else if (command.contains("date")) {
+	            Calendar now = Calendar.getInstance();
+	            int day = now.get(Calendar.DAY_OF_MONTH);
+	            int month = now.get(Calendar.MONTH) + 1; // Month is 0-indexed
+	            int year = now.get(Calendar.YEAR);
+	            System.out.println("Today's date is " + month + "/" + day + "/" + year);
+	        } 
+	        else if (command.contains("exit") || command.contains("quit")) {
+	            System.out.println("Goodbye! Have a nice day.");
+	            System.exit(0);
+	        } 
+		 
+	        else if (command.contains("calculate") || command.contains("calculation")) {
+	        	System.out.println("Select The Operaton's You Want To Perform ");
+	    		System.out.println("1. Addition, 2. Subtraction, 3. Multiplication, 4. Division, 5. Remainder");
+	    		int input = sc.nextInt();
+	    		System.out.println("Enter The 2 Numbers: ");
+	    		int a = sc.nextInt();
+	    		int b = sc.nextInt();
+	    		switch (input) {
+	    		case 1 : System.out.println(a+b);
+	            break;
+	            case 2 : System.out.println(a-b);
+	            break;
+	            case 3 : System.out.println(a*b);
+	            break;
+	            case 4 : System.out.println(a/b);
+	            break;
+	            case 5 : System.out.println(a % b);
+	            break;
+	            default: System.out.println("Invalid Token");
+	    		}
+	        } else if (command.contains("can you do") || command.contains("can you perform")) {
+	        	System.out.println("Till Now I can perform Simple Calculations, Tell Date's, Time etc");
+	        }
+	        else if (command.contains("thanks")) {
+	        	System.out.println("It was an honour to help you Sir 😁 \nAnything else I can do for you?");
+	        } else if (command.contains("how")) {
+	        	System.out.println("I am Doing Great!, How about you Sir?");
+	        } else if (command.contains("fine")) {
+	        	System.out.println("Glad To Hear That!, So Sir What's on your mind today? ");
+	        } else if (command.contains("nothing")) {
+	        	System.out.println("Ok so have a Great Day ahead Sir! \nIf You Need Any Assistance Just Ask Me");
+	        }
+	        else {
+	            System.out.println("Sorry, I did not understand that. Please try again.");
+	        
+	        }
+
+	}
+
+		
+	
+	
+
+public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    
+    System.out.println("Hello Sir! How May I assit You? ");
+
+    while (true) {
+        // Read user input
+        String command = sc.nextLine().toLowerCase();
+
+        // Respond based on the command
+        respond(command);
+    }
+  } 
+} 
+
